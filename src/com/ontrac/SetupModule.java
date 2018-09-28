@@ -17,15 +17,8 @@ public class SetupModule {
     /**
      * @param args the command line arguments
      */
-    //Initialize Entity Manager Factory : SetupModulePU
-    EntityManagerFactory emf =   Persistence.createEntityManagerFactory("SetupModulePU");
-    
-    /*
-    Method to setup Property Areas
-    */
-    public static void setUpPropertyAreas(){
-        
-    }
+  
+   
     public static void main(String[] args) {
         // TODO code application logic here
     }
