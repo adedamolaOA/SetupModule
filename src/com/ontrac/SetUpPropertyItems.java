@@ -43,7 +43,6 @@ public class SetUpPropertyItems {
     private final static String HOTEL_ID = "GPA003";
     private final static String[] ROOM_ITEMS = {"TV", "WC", "Sink", "Fridge", "AC", "Bed", "Bathroom", "Bedroom", "light"};
     private final PropertyItemJpaController propertyItemJPA;
-    private int id;
 
     public SetUpPropertyItems() {
         //Initialize Entity Manager Factory : SetupModulePU and Property Item JPA Controller
@@ -66,7 +65,6 @@ public class SetUpPropertyItems {
                 pItems.setItemName(item);
                 pItems.setReplicationStatus(false);
                 pItems.setUpdatedBy(USER);
-                pItems.setItemId(id);
                 
                 try{
                    propertyItemJPA.create(pItems);
@@ -74,10 +72,8 @@ public class SetUpPropertyItems {
                 }catch(Exception e){
                      System.out.println("Error Occured: "+e.getMessage());
                 }
-                //Increment ID Count
-                id++;
+                
             }
-            
 
         }
 

@@ -5,10 +5,10 @@
     <class>com.ontrac.entities.PropertyItem</class>
     <class>com.ontrac.entities.PropertyAreas</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=intlipms"/>
-      <property name="javax.persistence.jdbc.user" value="sa"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://xxx.xxx.xxx.xxx:xxxx;databaseName=intlipms"/>
+      <property name="javax.persistence.jdbc.user" value="xxxxx"/>
       <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-      <property name="javax.persistence.jdbc.password" value="millinik"/>
+      <property name="javax.persistence.jdbc.password" value="xxxxxxx"/>
     </properties>
   </persistence-unit>
 </persistence>

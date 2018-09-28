@@ -43,7 +43,6 @@ public class SetUpPropertyArea {
     private final static String HOTEL_ID = "GPA003";
     private final static String[] AREAS = {"Reception", "Kitchen", "Bar", "Pool", "Gym", "Restaurant", "Staff facility", "Security", "Outside gate", "Inside gate",
         "Backyard", "Room hallway", "Petty cash", "Technology",};
-    private int id = 1;
     private final PropertyAreasJpaController propertyAreaJPA;
 
     public SetUpPropertyArea() {
@@ -83,7 +82,6 @@ public class SetUpPropertyArea {
                 pArea.setHotelId(HOTEL_ID);
                 pArea.setReplicationStatus(false);
                 pArea.setUpdatedBy(USER);
-                pArea.setAreaid(id);
                 try {
                     //Create Property Area (Rooms)
                     propertyAreaJPA.create(pArea);
@@ -97,9 +95,6 @@ public class SetUpPropertyArea {
                 //reset isSkipable value to false for the next loop
                 isSkipable = false;
             }
-            
-            //increment id count
-            id++;
 
         }
 
@@ -119,7 +114,6 @@ public class SetUpPropertyArea {
             pArea.setHotelId(HOTEL_ID);
             pArea.setReplicationStatus(false);
             pArea.setUpdatedBy(USER);
-            pArea.setAreaid(id);
             try {
                 //Create Property Area (Rooms)
                 propertyAreaJPA.create(pArea);
@@ -128,7 +122,6 @@ public class SetUpPropertyArea {
                 System.out.println("Error Occured: " + e.getMessage());
 
             }
-            id++;
         }
     }
 
