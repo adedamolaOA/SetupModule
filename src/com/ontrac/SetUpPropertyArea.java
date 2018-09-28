@@ -23,8 +23,11 @@
  */
 package com.ontrac;
 
+import com.ontrac.controller.PropertyAreasJpaController;
+import com.ontrac.controller.exceptions.PreexistingEntityException;
 import com.ontrac.entities.PropertyAreas;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -36,23 +39,33 @@ import javax.persistence.Persistence;
 public class SetUpPropertyArea {
 
     EntityManagerFactory emf;
-
+    final static String USER = "Administrator";
+    final static String HOTEL_ID = "GPA003";
+    PropertyAreasJpaController propertyAreaJPA;
     public SetUpPropertyArea() {
         //Initialize Entity Manager Factory : SetupModulePU
         emf = Persistence.createEntityManagerFactory("SetupModulePU");
+        propertyAreaJPA = new PropertyAreasJpaController(emf);
     }
 
     /*
     Method to create Property Areas
      */
-    public List<Integer> create(int floor, int roomCount, List<Integer> numberSkip) {
-        // Result Array
-        List<Integer> results = new ArrayList<>();
+    
+    public boolean create(int floor, int roomCount, List<Integer> numberSkip) {
+        // Result Array for JTestUNIT 
+        //List<Integer> results = new ArrayList<>();
 
         //Skip status set to false 
         boolean isSkipable = false;
+
+        //transaction state
+        boolean transactionState = false;
+
+        //Call Property Area Jpa Controller
+        
         for (int i = 1; i < roomCount + 1; i++) {
-            
+
             //Check if current value of i is can be skiped from a list of number skips
             for (int skip : numberSkip) {
                 if (skip == i) {
@@ -62,21 +75,47 @@ public class SetUpPropertyArea {
             }
             if (!isSkipable) {
                 int roomNumber = floor + i;
-                results.add(roomNumber);
-            }else{
-               //reset isSkipable value to false for the next loop
-               isSkipable = false;
-            }           
-            
+                PropertyAreas pArea = new PropertyAreas();
+                pArea.setAreadesc("Rooms");
+                pArea.setAreaname(String.valueOf(roomNumber));
+                pArea.setCreatedBy(USER);
+                pArea.setDateCreated(new Date());
+                pArea.setDateUpdated(new Date());
+                pArea.setHotelId("GPA003");
+                pArea.setReplicationStatus(false);
+                pArea.setUpdatedBy(USER);
+                try {
+                    propertyAreaJPA.create(pArea);
+                    transactionState = true;
+                } catch (Exception e) {
+                    System.out.println("Error Occured: "+e.getMessage());
+                    
+                }
+
+            } else {
+                //reset isSkipable value to false for the next loop
+                isSkipable = false;
+            }
+
         }
-        return results;
+        
+        //Return result for JUnit Test
+        //return results;
+        
+        return transactionState;
 
     }
 
+    // Return all list of property Areas
     public List<PropertyAreas> get() {
+        
+        return propertyAreaJPA.findPropertyAreasEntities();
 
-        return null;
-
+    }
+    
+    //Closing Entity Manager Factory
+    public void closeConnection(){
+        emf.close();
     }
 
 }

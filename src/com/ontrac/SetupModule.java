@@ -20,7 +20,8 @@ public class SetupModule {
   
    
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Start Property Area Setup
+        
     }
     
    
