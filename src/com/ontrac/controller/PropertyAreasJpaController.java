@@ -141,4 +141,5 @@ public class PropertyAreasJpaController implements Serializable {
         }
     }
     
+    
 }

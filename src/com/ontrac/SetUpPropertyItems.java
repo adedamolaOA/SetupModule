@@ -38,11 +38,12 @@ import javax.persistence.Persistence;
  */
 public class SetUpPropertyItems {
 
-    EntityManagerFactory emf;
-    final static String USER = "Administrator";
-    final static String HOTEL_ID = "GPA003";
-    final static String[] ROOM_ITEMS = {"TV", "WC", "Sink", "Fridge", "AC", "Bed", "Bathroom", "Bedroom", "light"};
-    PropertyItemJpaController propertyItemJPA;
+    private final EntityManagerFactory emf;
+    private final static String USER = "Administrator";
+    private final static String HOTEL_ID = "GPA003";
+    private final static String[] ROOM_ITEMS = {"TV", "WC", "Sink", "Fridge", "AC", "Bed", "Bathroom", "Bedroom", "light"};
+    private final PropertyItemJpaController propertyItemJPA;
+   
 
     public SetUpPropertyItems() {
         //Initialize Entity Manager Factory : SetupModulePU and Property Item JPA Controller
@@ -50,8 +51,8 @@ public class SetUpPropertyItems {
         propertyItemJPA = new PropertyItemJpaController(emf);
     }
 
-    public boolean create() {
-        boolean transcationState = false;
+    public void create() {
+       
         List<PropertyAreas> propertyAreas = new PropertyAreasJpaController(emf).findPropertyAreasEntities();
         for (PropertyAreas p : propertyAreas) {
             for (String item : ROOM_ITEMS) {
@@ -66,18 +67,20 @@ public class SetUpPropertyItems {
                 pItems.setReplicationStatus(false);
                 pItems.setUpdatedBy(USER);
                 
+                
                 try{
                    propertyItemJPA.create(pItems);
-                   transcationState = true;
+                   
                 }catch(Exception e){
                      System.out.println("Error Occured: "+e.getMessage());
                 }
-                
+               
             }
+            
 
         }
 
-        return transcationState;
+        
     }
 
 }
