@@ -5,6 +5,11 @@
  */
 package com.ontrac;
 
+import com.ontrac.locations.Area11;
+import com.ontrac.locations.Guzape;
+import com.ontrac.utlis.MainProcessor;
+import com.ontrac.utlis.SetUpEntityManagerFactory;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManagerFactory;
@@ -19,40 +24,17 @@ public class SetupModule {
     /**
      * @param args the command line arguments
      */
-  
-   
     public static void main(String[] args) {
-        // Start Property Area Setup
-        List<Integer> skipList = new ArrayList<>();
+        // Load Display Information from MainProcess class
+        MainProcessor.info();
         
-        SetUpPropertyArea spa = new SetUpPropertyArea();
+        //Retrive user input and process selected action from MainProcess class
+        MainProcessor.processSelection();
         
-        spa.create(1200, 4, skipList);
-        spa.create(1300, 4, skipList);
-        //set skip value
-        skipList.add(2);
-        spa.create(2000, 4, skipList);
-        //clear skip value after work is done
-        skipList.clear();
-        spa.create(2100, 10, skipList);
-        spa.create(2200, 10, skipList);
-        spa.create(2300, 10, skipList);
-        spa.create(3100, 10, skipList);
-        spa.create(3200, 10, skipList);
-        spa.create(3300, 10, skipList);
-        
-        // Start Property Item Setup
-        SetUpPropertyItems spi = new SetUpPropertyItems();
-        spi.create();
-        
-        // Create Areas With No Items
-        spa.create();
-        
-        spa.closeConnection();
-        
-        
-    }
+        // Close all open connections
+        SetUpEntityManagerFactory.close();
+
+    } 
     
-   
-    
+
 }

@@ -1,14 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-  <persistence-unit name="SetupModulePU" transaction-type="RESOURCE_LOCAL">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>com.ontrac.entities.PropertyItem</class>
-    <class>com.ontrac.entities.PropertyAreas</class>
-    <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://xxx.xxx.xxx.xxx:xxxx;databaseName=intlipms"/>
-      <property name="javax.persistence.jdbc.user" value="xxxxx"/>
-      <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-      <property name="javax.persistence.jdbc.password" value="xxxxxxx"/>
-    </properties>
-  </persistence-unit>
+    <persistence-unit name="SetupModulePU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>com.ontrac.entities.PropertyItem</class>
+        <class>com.ontrac.entities.PropertyAreas</class>
+        <properties>
+            <property name="eclipselink.canonicalmodel.subpackage" value="guzape"/>
+        </properties>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://xxx.xxx.xxx.xxx:xxxx;databaseName=intlipms"/>
+            <property name="javax.persistence.jdbc.user" value="xxxx"/>
+            <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+            <property name="javax.persistence.jdbc.password" value="xxxxxx"/>
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="SetupModulePU2" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>com.ontrac.entities.PropertyAreas</class>
+        <class>com.ontrac.entities.PropertyItem</class>
+        <properties>
+            <property name="eclipselink.canonicalmodel.subpackage" value="area11"/>
+        </properties>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://xxx.xxx.xxx.xxx:xxxx;databaseName=intlipms"/>
+            <property name="javax.persistence.jdbc.user" value="xxxx"/>
+            <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+            <property name="javax.persistence.jdbc.password" value="xxxxxx"/>
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="SetupModulePU3" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>com.ontrac.entities.PropertyAreas</class>
+        <class>com.ontrac.entities.PropertyItem</class>
+        <properties>
+            <property name="eclipselink.canonicalmodel.subpackage" value="enugu"/>
+        </properties>
+        <properties>
+           <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://xxx.xxx.xxx.xxx:xxxx;databaseName=intlipms"/>
+            <property name="javax.persistence.jdbc.user" value="xxxx"/>
+            <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+            <property name="javax.persistence.jdbc.password" value="xxxxxx"/>
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="SetupModulePU4" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>com.ontrac.entities.PropertyAreas</class>
+        <class>com.ontrac.entities.PropertyItem</class>
+        <properties>
+            <property name="eclipselink.canonicalmodel.subpackage" value="ogidi"/>
+        </properties>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://xxx.xxx.xxx.xxx:xxxx;databaseName=intlipms"/>
+            <property name="javax.persistence.jdbc.user" value="xxxx"/>
+            <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+            <property name="javax.persistence.jdbc.password" value="xxxxxx"/>
+        </properties>
+    </persistence-unit>
 </persistence>
