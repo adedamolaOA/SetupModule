@@ -39,9 +39,8 @@ import javax.persistence.Persistence;
  */
 public class SetUpPropertyArea {
 
-    private EntityManagerFactory emf;
+    private final EntityManagerFactory emf;
     private final static String USER = "Administrator";
-    private final static String HOTEL_ID = "GPA003";
     private final static String[] AREAS = {"Reception", "Kitchen", "Bar", "Pool", "Gym", "Restaurant", "Staff facility", "Security", "Outside gate", "Inside gate",
         "Backyard", "Room hallway", "Petty cash", "Technology",};
     private final PropertyAreasJpaController propertyAreaJPA;
@@ -58,7 +57,7 @@ public class SetUpPropertyArea {
     /*
     Method to create Property Areas
      */
-    public void create(int floor, int roomCount, List<Integer> numberSkip) {
+    public void create(String hotelId,int floor, int roomCount, List<Integer> numberSkip) {
         // Result Array for JTestUNIT 
         //List<Integer> results = new ArrayList<>();
 
@@ -83,7 +82,7 @@ public class SetUpPropertyArea {
                 pArea.setCreatedBy(USER);
                 pArea.setDateCreated(new Date());
                 pArea.setDateUpdated(new Date());
-                pArea.setHotelId(HOTEL_ID);
+                pArea.setHotelId(hotelId);
                 pArea.setReplicationStatus(false);
                 pArea.setUpdatedBy(USER);
                 try {
@@ -106,7 +105,7 @@ public class SetUpPropertyArea {
         //return results;     
     }
 
-    public void create() {
+    public void create(String hotelId) {
         for (String area : AREAS) {
 
             PropertyAreas pArea = new PropertyAreas();
@@ -115,7 +114,7 @@ public class SetUpPropertyArea {
             pArea.setCreatedBy(USER);
             pArea.setDateCreated(new Date());
             pArea.setDateUpdated(new Date());
-            pArea.setHotelId(HOTEL_ID);
+            pArea.setHotelId(hotelId);
             pArea.setReplicationStatus(false);
             pArea.setUpdatedBy(USER);
             try {

@@ -41,7 +41,6 @@ public class SetUpPropertyItems {
 
     private final EntityManagerFactory emf;
     private final static String USER = "Administrator";
-    private final static String HOTEL_ID = "GPA003";
     private final static String[] ROOM_ITEMS = {"TV", "WC", "Sink", "Fridge", "AC", "Bed", "Bathroom", "Bedroom", "light"};
     private final PropertyItemJpaController propertyItemJPA;
 
@@ -51,7 +50,7 @@ public class SetUpPropertyItems {
         propertyItemJPA = new PropertyItemJpaController(emf);
     }
 
-    public void create() {
+    public void create(String hotelId) {
        
         List<PropertyAreas> propertyAreas = new PropertyAreasJpaController(emf).findPropertyAreasEntities();
         for (PropertyAreas p : propertyAreas) {
@@ -61,7 +60,7 @@ public class SetUpPropertyItems {
                 pItems.setCreatedBy(USER);
                 pItems.setDateCreated(new Date());
                 pItems.setDateUpdated(new Date());
-                pItems.setHotelId(HOTEL_ID);
+                pItems.setHotelId(hotelId);
                 pItems.setItemDesc("Room "+item);
                 pItems.setItemName(item);
                 pItems.setReplicationStatus(false);

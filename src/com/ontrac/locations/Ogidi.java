@@ -34,34 +34,34 @@ import java.util.List;
  */
 public class Ogidi {
      public static void setup(int location) {
-        // Start Property Area Setup
+         // Start Property Area Setup
+        String hotelId="GPA005";
         List<Integer> skipList = new ArrayList<>();
 
         SetUpPropertyArea spa = new SetUpPropertyArea(location);
 
-        spa.create(1200, 4, skipList);
-        spa.create(1300, 4, skipList);
+        spa.create(hotelId,1200, 4, skipList);
+        spa.create(hotelId,1300, 4, skipList);
         
         //set skip value
         skipList.add(2);
-        spa.create(2000, 4, skipList);
+        spa.create(hotelId,2000, 4, skipList);
         //clear skip value after work is done
         
         skipList.clear();
-        spa.create(2100, 10, skipList);
-        spa.create(2200, 10, skipList);
-        spa.create(2300, 10, skipList);
-        spa.create(3100, 10, skipList);
-        spa.create(3200, 10, skipList);
-        spa.create(3300, 10, skipList);
+        spa.create(hotelId,2100, 10, skipList);
+        spa.create(hotelId,2200, 10, skipList);
+        spa.create(hotelId,2300, 10, skipList);
+        spa.create(hotelId,3100, 10, skipList);
+        spa.create(hotelId,3200, 10, skipList);
+        spa.create(hotelId,3300, 10, skipList);
 
         // Start Property Item Setup for Rooms
         SetUpPropertyItems spi = new SetUpPropertyItems(location);
-        spi.create();
+        spi.create(hotelId);
 
         // Create Other Areas With No Items
-        spa.create();
-
+        spa.create(hotelId);
         
     }
 }

@@ -35,6 +35,7 @@ import java.util.List;
 public class Enugu {
      public static void setup(int location) {
         // Start Property Area Setup
+        String hotelId = "GPA004";
         List<Integer> skipList = new ArrayList<>();
 
         SetUpPropertyArea spa = new SetUpPropertyArea(location);
@@ -42,20 +43,20 @@ public class Enugu {
         for (int i = 1; i < 16; i++) {
             skipList.add(i);
         }
-        spa.create(100, 19, skipList);
+        spa.create(hotelId,100, 19, skipList);
         //clear skip value after work is done
         skipList.clear();
         
-        spa.create(200, 20, skipList);
+        spa.create(hotelId,200, 20, skipList);
 
-        spa.create(300, 20, skipList);       
+        spa.create(hotelId,300, 20, skipList);       
 
         // Start Property Item Setup for rooms
         SetUpPropertyItems spi = new SetUpPropertyItems(location);
-        spi.create();
+        spi.create(hotelId);
 
         // Create Other Areas With No Items
-        spa.create();
+        spa.create(hotelId);
 
        
     }

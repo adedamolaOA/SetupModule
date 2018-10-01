@@ -8,10 +8,10 @@
             <property name="eclipselink.canonicalmodel.subpackage" value="guzape"/>
         </properties>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=intlipms"/>
-            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://xxx.xxx.xxx.xxx:xxxx;databaseName=intlipms"/>
+            <property name="javax.persistence.jdbc.user" value="xxx"/>
             <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-            <property name="javax.persistence.jdbc.password" value="millinik"/>
+            <property name="javax.persistence.jdbc.password" value="xxx"/>
         </properties>
     </persistence-unit>
     <persistence-unit name="SetupModulePU2" transaction-type="RESOURCE_LOCAL">
@@ -22,10 +22,10 @@
             <property name="eclipselink.canonicalmodel.subpackage" value="area11"/>
         </properties>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=intlipms"/>
-            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://xxx.xxx.xxx.xxx:xxxx;databaseName=intlipms"/>
+            <property name="javax.persistence.jdbc.user" value="xxxx"/>
             <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-            <property name="javax.persistence.jdbc.password" value="millinik"/>
+            <property name="javax.persistence.jdbc.password" value="xxxxxx"/>
         </properties>
     </persistence-unit>
     <persistence-unit name="SetupModulePU3" transaction-type="RESOURCE_LOCAL">
@@ -36,10 +36,10 @@
             <property name="eclipselink.canonicalmodel.subpackage" value="enugu"/>
         </properties>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=intlipms"/>
-            <property name="javax.persistence.jdbc.user" value="sa"/>
+           <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://xxx.xxx.xxx.xxx:xxxx;databaseName=intlipms"/>
+            <property name="javax.persistence.jdbc.user" value="xxxx"/>
             <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-            <property name="javax.persistence.jdbc.password" value="millinik"/>
+            <property name="javax.persistence.jdbc.password" value="xxxxxx"/>
         </properties>
     </persistence-unit>
     <persistence-unit name="SetupModulePU4" transaction-type="RESOURCE_LOCAL">
@@ -50,10 +50,10 @@
             <property name="eclipselink.canonicalmodel.subpackage" value="ogidi"/>
         </properties>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=intlipms"/>
-            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://xxx.xxx.xxx.xxx:xxxx;databaseName=intlipms"/>
+            <property name="javax.persistence.jdbc.user" value="xxxx"/>
             <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-            <property name="javax.persistence.jdbc.password" value="millinik"/>
+            <property name="javax.persistence.jdbc.password" value="xxxxxx"/>
         </properties>
     </persistence-unit>
 </persistence>
